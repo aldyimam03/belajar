@@ -1,0 +1,30 @@
+.div-1 {
+  height: 200px;
+  width: 200px;
+  overflow: visible;
+  background-color: lightgreen;
+}
+
+.div-2 {
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  overflow: hidden;
+  background-color: lightgreen;
+}
+
+.div-3 {
+  height: 200px;
+  width: 200px;
+  margin-right: auto;
+  overflow: scroll;
+  background-color: lightgreen;
+}
+
+.div-4 {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  overflow: auto;
+  background-color: lightgreen;
+}
