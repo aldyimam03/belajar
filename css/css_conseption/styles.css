@@ -1,0 +1,4 @@
+p {
+  /* warna biru ditimpa warna merah karena ada tambahan !important */
+  color: red !important;
+}

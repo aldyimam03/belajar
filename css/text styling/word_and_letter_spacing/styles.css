@@ -1,0 +1,11 @@
+main {
+  font-family: sans-serif;
+}
+
+.letter-spacing {
+  letter-spacing: 4px;
+}
+
+.word-spacing {
+  word-spacing: 1.5em;
+}

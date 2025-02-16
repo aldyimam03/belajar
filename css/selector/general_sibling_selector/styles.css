@@ -1,0 +1,4 @@
+/* Rule akan diterapkan pada semua elemen <p> yang susunannya terletak setelah elemen <img> */
+img ~ p {
+  color: green;
+}

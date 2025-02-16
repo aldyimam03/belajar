@@ -1,0 +1,24 @@
+main {
+  color: red;
+}
+
+section {
+  background-color: aqua;
+  padding: 20px;
+}
+
+section > div h1 {
+  background-color: rgb(235, 255, 213);
+  padding: 15px;
+  color: darkblue;
+}
+
+section > div h2 {
+  background-color: #60d0a8;
+}
+
+section > div h3 {
+  background-color: hsl(56, 62%, 85%);
+  color: yellow;
+  padding: 10px 15px;
+}

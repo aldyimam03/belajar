@@ -1,0 +1,38 @@
+p {
+  background-color: red;
+}
+
+p.opacity-50 {
+  opacity: 50%;
+}
+
+p.opacity-100 {
+  opacity: 100%;
+}
+
+section div {
+  width: 50%;
+  height: 200px;
+
+  line-height: 200px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.box1 {
+  background-color: rgb(255, 255, 0, 0.75);
+
+  float: left;
+}
+.box2 {
+  background-color: hsl(120, 100%, 25%, 0.75);
+
+  float: left;
+  margin-left: -25%;
+}
+.box3 {
+  background-color: #0000ffaa;
+
+  float: left;
+  margin-left: -25%;
+}

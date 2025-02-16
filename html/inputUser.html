@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input User</title>
+  </head>
+  <body>
+    <!--INPUT USER-->
+    <div>
+      Text:
+      <input type="text" />
+    </div>
+    <div>
+      Number:
+      <input type="number" />
+    </div>
+    <div>
+      Email:
+      <input type="email" />
+    </div>
+    <div>
+      Password:
+      <input type="password" />
+    </div>
+
+    <!--Non-Single Line Input Element-->
+    <input
+      type="text"
+      value="Belajar
+  Dasar
+  Pemrograman
+  Web"
+    />
+
+    <textarea rows="6" cols="16">
+        Belajar
+        Dasar
+        Pemrograman
+        Web
+        </textarea
+    >
+
+    <!--LABEL ELEMENT-->
+    <div>
+      <label for="email">Email</label>
+      <br />
+      <input type="email" id="email" />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <br />
+      <input type="password" id="password" />
+    </div>
+
+    <!--ATRIBUT ELEMENT INPUT-->
+    <div>
+      <label for="email">Email</label>
+      <br />
+      <input type="email" id="email" placeholder="example@mail.com" required />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <br />
+      <input type="password" id="password" placeholder="********" required />
+    </div>
+
+    
+  </body>
+</html>

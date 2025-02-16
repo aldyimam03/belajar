@@ -1,0 +1,17 @@
+h1 {
+  font-size: 1.5em;
+}
+
+/* Rule tidak akan diterapkan pada target karena kesalahan penulisan nilai properti */
+h1 {
+  font-size: 10 em;
+}
+
+/*body {
+  font-size: 18px;
+}*/
+
+/*h1 {*/
+/* 150% dari 16 = 24px */
+/*font-size: 150%; 
+}*/

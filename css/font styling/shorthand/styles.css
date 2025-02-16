@@ -1,0 +1,5 @@
+/* target { font: style weight variant size font-family */
+
+h1 {
+  font: 1em sans-serif;
+}

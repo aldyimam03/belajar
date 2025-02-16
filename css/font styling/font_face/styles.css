@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Dicoding Font";
+  src: url("FILE-FONT.TTF");
+}
+
+p {
+  font-family: "Dicoding Font";
+}

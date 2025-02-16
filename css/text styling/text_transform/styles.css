@@ -1,0 +1,19 @@
+main {
+  font-family: sans-serif;
+}
+
+.transform-none {
+  text-transform: none;
+}
+
+.transform-capitalize {
+  text-transform: capitalize;
+}
+
+.transform-lowercase {
+  text-transform: lowercase;
+}
+
+.transform-uppercase {
+  text-transform: uppercase;
+}

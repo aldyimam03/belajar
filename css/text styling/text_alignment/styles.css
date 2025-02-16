@@ -1,0 +1,26 @@
+main {
+  width: 80%;
+  margin: 0 auto;
+
+  border: 1px solid black;
+}
+
+p {
+  border: 1px solid black;
+}
+
+.tl-left {
+  text-align: left;
+}
+
+.tl-right {
+  text-align: right;
+}
+
+.tl-center {
+  text-align: center;
+}
+
+.tl-justify {
+  text-align: justify;
+}

@@ -1,0 +1,17 @@
+.red {
+  color: red;
+}
+
+.skyblue-bg {
+  background-color: skyblue;
+}
+
+.fancy {
+  font-weight: bold;
+  text-shadow: 4px 4px 3px #77f;
+}
+
+/* kalau tidak ditulis p.fancy maka akan ikut style dari .fancy */
+p.fancy {
+  text-shadow: 4px 4px 3px #00c8eb;
+}
