@@ -1,0 +1,12 @@
+.container {
+  width: 800px;
+  border: 4px solid black;
+
+  /* Menggantikan clear property */
+  overflow: auto;
+}
+
+img {
+  float: left;
+  margin: 10px;
+}
