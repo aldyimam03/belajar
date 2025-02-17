@@ -41,7 +41,6 @@ footer {
 .card {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
   padding: 20px;
 }
 .jumbotron {
@@ -51,10 +50,14 @@ footer {
   padding: 60px;
   text-align: center;
 }
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+
+  gap: 2rem;
+}
 nav li {
-  display: inline;
   list-style-type: none;
-  margin-right: 20px;
 }
 nav {
   background-color: #00a2c6;
@@ -63,17 +66,18 @@ nav {
   top: 0;
 }
 main {
-  overflow: auto;
   padding: 20px;
+  display: flex;
+  gap: 1.5rem;
 }
 #content {
-  float: left;
-  width: 75%;
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
 aside {
-  float: right;
-  padding-left: 20px;
-  width: 25%;
+  flex: 1;
 }
 header {
   display: inline;
@@ -83,5 +87,24 @@ header {
   aside {
     padding: 0;
     width: 100%;
+  }
+}
+/* Perangkat dengan lebar layar 1200px dan di bawahnya */
+@media screen and (max-width: 1200px) {
+  main { 
+    flex-flow: column nowrap;
+  }
+
+  main aside { 
+    align-self: center;
+  }
+}
+/* Perangkat dengan lebar layar 768px dan di bawahnya */
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
   }
 }

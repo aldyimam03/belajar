@@ -1,0 +1,14 @@
+main .flex-1 {
+  background-color: grey;
+  height: 50vh;
+}
+
+.flex-1 {
+  display: flex;
+
+  /* Silakan coba seluruh nilainya */
+  /* flex-direction: row; */
+  flex-direction: row-reverse;
+  /*flex-direction: column;*/
+  /*flex-direction: column-reverse;*/
+}
