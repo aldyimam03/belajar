@@ -1,0 +1,370 @@
+/* Global Styles */
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* Header */
+header.navbar-container {
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column; /* Menjadikan navbar dan jumbotron dalam satu kolom */
+  gap: 0; /* Menghilangkan jarak antara elemen */
+  align-items: center;
+  padding-top: 15px;
+  background-color: #111;
+  color: white;
+}
+
+header.navbar-container .nav-list ul {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-list a:hover {
+  font-weight: bold;
+}
+
+/* Jumbotron */
+.jumbotron {
+  position: relative;
+  margin-top: 15px;
+  width: 100%;
+  height: 400px;
+  background: url("../assets/jinx.jpeg") center/cover no-repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.jumbotron h1,
+.jumbotron p,
+.jumbotron form {
+  position: relative;
+  z-index: 2;
+}
+
+.jumbotron h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.jumbotron p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Search Form */
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-button {
+  padding: 11.4px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #b20710;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  display: flex;
+  gap: 1.5rem;
+}
+
+aside {
+  flex: 1;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.film-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Aside (Popular Film) */
+aside.popular-film {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.popular-film h2 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popular-film-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.popular-film-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.popular-film-content {
+  text-align: center;
+}
+
+.popular-film-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popular-film-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  background: url("../assets/interstellar.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.footer * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  header.navbar-container .nav-list ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+
+  .jumbotron p {
+    font-size: 1rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  main {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  aside.popular-film {
+    order: 2; /* Memastikan aside berada di bawah */
+    margin-top: 20px;
+  }
+
+  .popular-film-card {
+    flex-direction: column;
+  }
+
+  .popular-film-image {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Konten utama lebih besar, aside di kanan */
+    gap: 20px;
+  }
+
+  aside.popular-film {
+    order: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .jumbotron h1 {
+    font-size: 1.75rem;
+  }
+
+  .jumbotron p {
+    font-size: 0.9rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+
+  .popular-film h2 {
+    font-size: 1.5rem;
+  }
+
+  .popular-film-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .popular-film-content p {
+    font-size: 0.9rem;
+  }
+}
