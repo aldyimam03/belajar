@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Cube World!</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #main {
+        text-align: center;
+      }
+
+      button {
+        width: 200px;
+        font-size: 15px;
+        margin: 8px;
+        padding: 6px;
+        cursor: pointer;
+      }
+
+      .button-group {
+        margin-top: 10px;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        background-color: #ccc;
+      }
+
+      hr {
+        height: 2px;
+        width: 95%;
+        background-color: black;
+        border: none;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h2>It's Cube Time!</h2>
+      <img
+        id="gambar"
+        src="https://raw.githubusercontent.com/dicodingacademy/a315-web-pemula-labs/shared-files/homepage-dicoding-challenge-illustration.png"
+        alt="Ilustrasi Rubik’s Cube"
+        width="300"
+        height="215"
+      />
+      <p id="caption">
+        <b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b>
+      </p>
+
+      <div class="button-group">
+        <button>Sejarah</button>
+        <button>Permainan</button>
+        <button><i>Fun Fact</i></button>
+        <button disabled>Play (Coming Soon)</button>
+        <button>Exit</button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div id="links">
+      <p>Situs lainnya yang tidak kalah menarik:</p>
+      <ul>
+        <li>
+          <a href="https://www.dicoding.com" id="dicodingLink" target="_blank"
+            >Dicoding</a
+          >
+        </li>
+        <li>
+          <a href="https://www.google.com" id="googleLink" target="_blank"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
