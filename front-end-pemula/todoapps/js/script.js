@@ -4,11 +4,55 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     addTodo();
   });
+
+  if (isStorageExist()) {
+    loadDataFromStorage();
+  }
 });
 
 const todos = [];
 const RENDER_EVENT = "render-todo";
 
+const SAVED_EVENT = "saved-todo";
+const STORAGE_KEY = "TODO_APPS";
+
+// MENYIMPAN DATA KE LOKAL STORAGE
+function saveData() {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(todos);
+    localStorage.setItem(STORAGE_KEY, parsed);
+    document.dispatchEvent(new Event(SAVED_EVENT));
+  }
+}
+
+// CEK LOKAL STORAGE
+function isStorageExist() /* boolean */ {
+  if (typeof Storage === undefined) {
+    alert("Browser kamu tidak mendukung local storage");
+    return false;
+  }
+  return true;
+}
+
+document.addEventListener(SAVED_EVENT, function () {
+  console.log(localStorage.getItem(STORAGE_KEY));
+});
+
+// MEMANGGIL DATA DARI STORAGE
+function loadDataFromStorage() {
+  const serializedData = localStorage.getItem(STORAGE_KEY);
+  let data = JSON.parse(serializedData);
+
+  if (data !== null) {
+    for (const todo of data) {
+      todos.push(todo);
+    }
+  }
+
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
+
+// MENAMBAHKAN TODO
 function addTodo() {
   const textTodo = document.getElementById("title").value;
   const timestamp = document.getElementById("date").value;
@@ -18,12 +62,15 @@ function addTodo() {
   todos.push(todoObject);
 
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
+// MEMBUAT ID
 function generateId() {
   return +new Date();
 }
 
+// MEMBUAT DETAIL TODO
 function generateTodoObject(id, task, timestamp, isCompleted) {
   return {
     id,
@@ -95,6 +142,7 @@ function makeTodo(todoObject) {
   return container;
 }
 
+// MEMINDAHKAN TASK KE COMPLETE
 function addTaskToCompleted(todoId) {
   const todoTarget = findTodo(todoId);
 
@@ -102,8 +150,10 @@ function addTaskToCompleted(todoId) {
 
   todoTarget.isCompleted = true;
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
+// MENGHAPUS TASK
 function removeTaskFromCompleted(todoId) {
   const todoTarget = findTodoIndex(todoId);
 
@@ -111,8 +161,10 @@ function removeTaskFromCompleted(todoId) {
 
   todos.splice(todoTarget, 1);
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
+// MENGEMBALIKAN TASK KE BELUM COMPLETE
 function undoTaskFromCompleted(todoId) {
   const todoTarget = findTodo(todoId);
 
@@ -120,6 +172,7 @@ function undoTaskFromCompleted(todoId) {
 
   todoTarget.isCompleted = false;
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
 function findTodo(todoId) {
