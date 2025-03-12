@@ -1,0 +1,192 @@
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: cornflowerblue;
+	text-align: center;
+	padding: 1rem;
+	color: white;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+main {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section {
+	width: 45%;
+	padding: 1rem;
+	margin-top: 1rem;
+	border: 2px solid cornflowerblue;
+	border-radius: 1rem;
+}
+
+section h2 {
+	text-align: center;
+	color: cornflowerblue;
+}
+
+section.bookList h2 {
+	text-align: left;
+}
+
+form#bookForm label {
+	display: block;
+	font-weight: bold;
+	margin-top: 0.5rem;
+	color: cornflowerblue;
+}
+
+form#bookForm label[for="bookFormIsComplete"] {
+	display: inline-block;
+	margin-top: 0.5rem;
+	color: cornflowerblue;
+}
+
+form#bookForm input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 2rem;
+	border-radius: 0.5rem;
+	padding: 0 0.5rem;
+}
+
+form#bookForm input[type="checkbox"] {
+	width: auto;
+	height: auto;
+	margin-left: 0.5rem;
+}
+
+form#bookForm button {
+	width: 100%;
+	height: 2.5rem;
+	margin-top: 0.5rem;
+	background-color: cornflowerblue;
+	color: white;
+	border-radius: 0.5rem;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+form#bookForm .updateButtons {
+	display: none;
+	gap: 0.5rem;
+}
+
+form#bookForm .updateButtons button {
+	width: 50%;
+}
+
+form#bookForm button#updateButton {
+	background-color: coral;
+}
+
+form#bookForm button#cancelButton {
+	background-color: crimson;
+}
+
+section form#searchBook {
+	display: flex;
+	margin-top: 1rem;
+	gap: 0.5rem;
+	align-items: center;
+	color: cornflowerblue;
+	font-weight: bold;
+}
+
+section form#searchBook input {
+	box-sizing: border-box;
+	flex-grow: 2;
+	height: 2rem;
+	border-radius: 0.5rem;
+	padding: 0 0.5rem;
+}
+
+section form#searchBook button {
+	flex-grow: 1;
+	height: 2.3rem;
+	background-color: cornflowerblue;
+	color: white;
+	border-radius: 0.5rem;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+section.bookList div[data-bookid] {
+	background-color: aliceblue;
+	margin: 0.5rem 0;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 0.5rem;
+}
+
+button[data-testid="bookItemDeleteButton"] {
+	width: 2rem;
+	height: 2rem;
+	font-size: 0;
+	background: url("assets/trash-outline.svg");
+	background-size: contain;
+	margin-left: 0.5rem;
+	cursor: pointer;
+	border: none;
+}
+
+button[data-testid="bookItemDeleteButton"]:hover {
+	background: url("assets/trash-fill.svg");
+  background-size: contain;
+}
+
+button[data-testid="bookItemEditButton"] {
+  width: 2rem;
+	height: 2rem;
+	font-size: 0;
+  margin-left: 0.5rem;
+	background: url("assets/edit-outline.svg");
+	background-size: contain;
+	cursor: pointer;
+	border: none;
+}
+
+button[data-testid="bookItemEditButton"]:hover {
+	background: url("assets/edit-fill.svg");
+  background-size: contain;
+}
+
+button[data-testid="bookItemIsCompleteButton"] {
+  width: 2rem;
+	height: 2rem;
+	font-size: 0;
+  margin-left: 0.5rem;
+	background: url("assets/check-outline.svg");
+	background-size: contain;
+	cursor: pointer;
+	border: none;
+}
+
+button[data-testid="bookItemIsCompleteButton"]:hover {
+	background: url("assets/check-solid.svg");
+  background-size: contain;
+}
+
+button.undo-button[data-testid="bookItemIsCompleteButton"] {
+  width: 2rem;
+	height: 2rem;
+	font-size: 0;
+  margin-left: 0.5rem;
+	background: url("assets/undo-ouline.svg");
+	background-size: contain;
+	cursor: pointer;
+	border: none;
+}

@@ -12,18 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const todos = [];
 const RENDER_EVENT = "render-todo";
-
 const SAVED_EVENT = "saved-todo";
 const STORAGE_KEY = "TODO_APPS";
-
-// MENYIMPAN DATA KE LOKAL STORAGE
-function saveData() {
-  if (isStorageExist()) {
-    const parsed = JSON.stringify(todos);
-    localStorage.setItem(STORAGE_KEY, parsed);
-    document.dispatchEvent(new Event(SAVED_EVENT));
-  }
-}
 
 // CEK LOKAL STORAGE
 function isStorageExist() /* boolean */ {
@@ -37,6 +27,15 @@ function isStorageExist() /* boolean */ {
 document.addEventListener(SAVED_EVENT, function () {
   console.log(localStorage.getItem(STORAGE_KEY));
 });
+
+// MENYIMPAN DATA KE LOKAL STORAGE
+function saveData() {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(todos);
+    localStorage.setItem(STORAGE_KEY, parsed);
+    document.dispatchEvent(new Event(SAVED_EVENT));
+  }
+}
 
 // MEMANGGIL DATA DARI STORAGE
 function loadDataFromStorage() {
