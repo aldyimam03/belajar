@@ -190,7 +190,7 @@ const first = "bekerja";
 const second = "sama";
 const merged = first + second;
 
-console.log(merged);
+console.log(merged); // bekerja sama
 
 const currency = "IDR";
 
@@ -198,7 +198,7 @@ let value = 10000;
 
 value += 5000;
 
-console.log(value);
+console.log(value); // 15000
 
 // const money = currency + " " + value;
 
@@ -218,16 +218,16 @@ function katakanNama(name, umur) {
   console.log(sapaan);
 }
 
-katakanNama("aldy");
-katakanNama("toni");
+katakanNama("aldy"); // Halo! aldy
+katakanNama("toni"); // Halo! toni
 
 function tebakHari(hari = "Raya") {
   // default parameter
   console.log("Hari ini adalah hari " + hari);
 }
 
-tebakHari("Selasa");
-tebakHari();
+tebakHari("Selasa"); // Hari ini adalah hari Selasa
+tebakHari(); // Hari ini adalah hari Raya
 
 // return statement
 function sumNumber(a = 5, b = 10) {
@@ -245,7 +245,7 @@ const convertCelciusToFarenheit = function (temperature) {
 };
 
 const temperatureToFarenheit = convertCelciusToFarenheit(90);
-console.log(temperatureToFarenheit);
+console.log(temperatureToFarenheit); // 194
 
 function multiply(a, b) {
   return a * b;
@@ -256,7 +256,7 @@ function calculate(operation, numA, numB) {
 }
 
 const finalResult = calculate(multiply, 2, 4);
-console.log(finalResult);
+console.log(finalResult); // 8
 
 // multiplier
 function multiplier(x) {
@@ -268,8 +268,8 @@ function multiplier(x) {
 const double = multiplier(2);
 const triple = multiplier(3);
 
-console.log(double(10));
-console.log(triple(11));
+console.log(double(10)); // 20
+console.log(triple(11)); // 33
 
 // arrow function
 let temperatureInFahrenheit = null;
