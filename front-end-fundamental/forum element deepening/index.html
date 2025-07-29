@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Can Submit Files</title>
+
+    <link rel="stylesheet" href="common.css" />
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+  </head>
+  <body>
+    <main>
+      <!-- PERHATIKAN METHOD FORM -->
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="file">Berkas</label>
+          <input type="file" name="file" id="file" />
+        </div>
+
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+        <!-- PERHATIKAN TYPE INPUT FORM-->
+        <div class="form-group">
+          <label for="name">Nama</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subjek</label>
+          <input type="text" name="subject" id="subject" />
+        </div>
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+      </form>
+      <form>
+        <fieldset>
+          <legend>Waktu Keberangkatan</legend>
+          <div class="form-group">
+            <label for="departure_date">Tanggal</label>
+            <input type="date" name="departure_date" id="departure_date" />
+          </div>
+          <div class="form-group">
+            <label for="departure_date">Jam</label>
+            <input type="time" name="departure_date" id="departure_date" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Waktu Kedatangan</legend>
+          <div class="form-group">
+            <label for="arrival_date">Tanggal</label>
+            <input type="date" name="arrival_date" id="arrival_date" />
+          </div>
+          <div class="form-group">
+            <label for="arrival_date">Jam</label>
+            <input type="time" name="arrival_date" id="arrival_date" />
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+      </form>
+      <form>
+        <fieldset>
+          <legend>Jenis Kelamin</legend>
+          <div class="form-group">
+            <input type="radio" name="gender" value="man" id="gender_man" />
+            <label for="gender_man">Laki-laki</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="gender" value="woman" id="gender_woman" />
+            <label for="gender_woman">Perempuan</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Hobi</legend>
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="hobbies"
+              value="sport"
+              id="hobby_sport"
+            />
+            <label for="hobby_sport">Olahraga</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="hobbies"
+              value="reading_book"
+              id="hobby_reading_book"
+            />
+            <label for="hobby_reading_book">Membaca buku</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="hobbies"
+              value="traveling"
+              id="hobby_traveling"
+            />
+            <label for="hobby_traveling">Bepergian</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="checkbox"
+              name="hobbies"
+              value="culinary"
+              id="hobby_culinary"
+            />
+            <label for="hobby_culinary">Kulineran</label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+      </form>
+
+      <form>
+        <div class="form-group">
+          <label for="hobbies">Hobi</label>
+          <select name="hobbies" id="hobbies" required>
+            <option value="" disabled selected>Pilih salah satu</option>
+            <option value="sport">Olahraga</option>
+            <option value="reading_book">Membaca buku</option>
+            <option value="traveling">Bepergian</option>
+            <option value="culinary">Kulineran</option>
+            <option value="gardening">Berkebun</option>
+            <option value="bicycling">Bersepeda</option>
+            <option value="photography">Fotografi</option>
+            <option value="cooking">Memasak</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+      </form>
+
+      <form>
+        <div class="form-group">
+          <label for="expedition">Jasa Pengiriman/Kurir</label>
+          <input
+            type="text"
+            id="expedition"
+            name="expedition"
+            required
+            list="expeditionList"
+          />
+          <datalist id="expeditionList">
+            <option value="POS Indonesia">POS Indonesia</option>
+            <option value="JNE">JNE</option>
+            <option value="TIKI">TIKI</option>
+          </datalist>
+        </div>
+
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+      </form>
+
+      <!-- TYPE HIDDEN -->
+      <form>
+        <input type="hidden" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" />
+  
+        <div class="form-group">
+          <label for="name">Nama</label>
+          <input type="text" name="name" id="name" />
+        </div>
+  
+        <div class="form-group">
+          <button class="btn">Kirim</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
