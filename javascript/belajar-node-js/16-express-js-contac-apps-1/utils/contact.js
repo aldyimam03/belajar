@@ -1,9 +1,7 @@
-// import core module & third-party
 const fs = require("fs");
-const validator = require("validator");
 
+const path = "./data/contacts.json";
 const loadContact = () => {
-  const path = "./data/contacts.json";
   if (!fs.existsSync(path)) {
     fs.writeFileSync(path, "[]", "utf-8");
   }
@@ -11,85 +9,27 @@ const loadContact = () => {
   const contacts = JSON.parse(fs.readFileSync(path, "utf-8"));
   return contacts;
 };
-// cek apakah file contacts.json sudah ada
 
-const simpanContact = (name, email, phone) => {
-  // cek data
-  if (!name || !email || !phone) {
-    console.log("data tidak boleh kosong");
-    return false;
-  }
+const simpanContact = (contacts) => {
+  fs.writeFileSync(path, JSON.stringify(contacts), "utf-8");
+};
 
+const addContact = (contact) => {
   const contacts = loadContact();
-
-  const data = {
-    name,
-    email,
-    phone,
-  };
-
-  // cek duplikasi
-  const duplikasi = contacts.find((contact) => contact.name === name);
-  if (duplikasi) {
-    console.log("nama sudah terdaftar");
-    return false;
-  }
-
-  // cek email
-  if (!validator.isEmail(email)) {
-    console.log("email tidak valid");
-    return false;
-  }
-
-  // cek phone
-  if (!validator.isMobilePhone(phone, "id-ID")) {
-    console.log("nomor telepon tidak valid");
-    return false;
-  }
-
-  contacts.push(data);
-
-  fs.writeFileSync("contacts.json", JSON.stringify(contacts), "utf-8");
-
-  // cek apakah data sukes disimpan
-  if (!contacts) {
-    return console.log("data gagal disimpan");
-  } else {
-    console.log("data berhasil disimpan");
-  }
-
-  console.log("terima kasih sudah mengisi data");
+  contacts.push(contact);
+  simpanContact(contacts);
 };
 
 const findContact = (name) => {
   const contacts = loadContact();
   if (contacts.length === 0) {
-    
   }
   return contacts.find(
     (contact) => contact.name.toLowerCase() === name.toLowerCase()
   );
 };
 
-const listContact = () => {
-  const contacts = loadContact();
-  console.log("Contact List");
-  contacts.forEach((contact, i) => {
-    console.log(`${i + 1}. ${contact.name} - ${contact.phone}`);
-  });
-};
 
-const detailContact = (name) => {
-  const contacts = loadContact();
-  const contact = contacts.find(
-    (contact) => contact.name.toLowerCase() === name.toLowerCase()
-  );
-  if (!contact) {
-    console.log(`contact ${name} tidak ditemukan`);
-    return false;
-  }
-  console.log(contact);
-};
 
 const removeContact = (name) => {
   const contacts = loadContact();
@@ -100,11 +40,50 @@ const removeContact = (name) => {
     console.log(`contact ${name} tidak ditemukan`);
     return false;
   }
-  fs.writeFileSync("contacts.json", JSON.stringify(newContacts), "utf-8");
+  fs.writeFileSync(path, JSON.stringify(newContacts), "utf-8");
   console.log(`contact ${name} berhasil dihapus`);
+};
+
+const updateContact = (oldName, newData) => {
+  const contacts = loadContact();
+  const index = contacts.findIndex(
+    (c) => c.name.toLowerCase() === oldName.toLowerCase()
+  );
+
+  if (index !== -1) {
+    contacts[index] = newData;
+    fs.writeFileSync(path, JSON.stringify(contacts, null, 2), "utf-8");
+  }
+};
+
+
+const cekDuplikat = (name, email, phone) => {
+  const contacts = loadContact();
+  return contacts.find(
+    (contact) =>
+      contact.name === name ||
+      contact.email === email ||
+      contact.phone === phone
+  );
+};
+
+const findContactByEmail = (email) => {
+  const contacts = loadContact();
+  return contacts.find((contact) => contact.email === email);
+};
+
+const findContactByPhone = (phone) => {
+  const contacts = loadContact();
+  return contacts.find((contact) => contact.phone === phone);
 };
 
 module.exports = {
   loadContact,
+  addContact,
   findContact,
+  removeContact,
+  cekDuplikat,
+  updateContact,
+  findContactByEmail,
+  findContactByPhone,
 };

@@ -7,7 +7,20 @@
           <h5 class="card-title"><%= contact.name %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= contact.phone %></h6>
           <p class="card-text"><%= contact.email %></p>
-          <a href="/contact" class="card-link">Kembali ke daftar kontak</a>
+          <form
+            action="/contact?_method=DELETE"
+            method="POST"
+            style="display: inline"
+          >
+            <input type="hidden" name="name" value="<%= contact.name %>" />
+            <button type="submit" class="btn btn-danger">Hapus</button>
+          </form>
+          <!-- edit kontak -->
+          <a href="/contact/edit/<%= contact.name %>"
+            ><button class="btn btn-primary">Edit</button>
+          </a>
+          <br />
+          <a href="/contact" class="card-link d-block mt-10">Kembali ke daftar kontak</a>
         </div>
       </div>
     </div>

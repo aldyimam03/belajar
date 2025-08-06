@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col">
       <h2>Daftar Kontak Mahasiswa</h2>
+
+      <% if (msg.length !== 0) { %>
+      <div class="alert alert-success">
+        <p><%= msg %></p>
+      </div>
+      <% } %>
+
+      <a href="/contact/add" class="btn btn-primary">Tambah Kontak</a>
       <table class="table table-striped">
         <thead>
           <tr>
