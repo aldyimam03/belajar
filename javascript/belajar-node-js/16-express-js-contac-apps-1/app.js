@@ -21,13 +21,15 @@ const {
 
 app.set("view engine", "ejs");
 
+// manipulasi method
 app.use(methodOverride("_method"));
+// express layouts
 app.use(expressLayouts);
+// morgan
 app.use(morgan("dev"));
-
+// static
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-
 // konfigurasi flash
 app.use(cookieParser());
 app.use(
