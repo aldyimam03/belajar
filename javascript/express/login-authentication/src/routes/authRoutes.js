@@ -104,4 +104,8 @@ router.get("/dashboard", (req, res) => {
   });
 });
 
+router.use((req, res) => {
+  res.status(404).send("Not Found");
+});
+
 export default router;
