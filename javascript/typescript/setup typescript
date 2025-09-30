@@ -1,0 +1,29 @@
+Langkah langkah melakukan setup untuk typescript di vscode:
+
+1. init npm: npm init -y
+2. install typescript, ts-node, @types/node: npm install typescript ts-node @types/node
+3. buat config typescript: npx tsc --init
+4. ubah config tsconfig.json:
+  - "module": "commonJS",
+  - "target": "ES2020",
+  - "types": ["node"],
+5. buat struktur project seperti ini: 
+  (nama project)/
+  ┣ src/
+  ┃ ┗ index.ts
+  ┣ package.json
+  ┣ tsconfig.json
+  ┗ node_modules/
+// (OPSI 1)
+6. jalankan typescript: npx ts-node src/index.ts
+
+// (OPSI 2)
+7. (jika ingin compile ke javascript): npx tsc
+8. (jika ingin jalankan file javascript hasil compile): node dist/index.js
+
+9. (opsional) tambahkan script di package.json:
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "start:prod": "node dist/index.js"
+  }
