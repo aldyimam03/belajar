@@ -44,5 +44,5 @@
     "skipLibCheck": true
   },
 
-  "include": ["../13-readonly-property/src/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }
